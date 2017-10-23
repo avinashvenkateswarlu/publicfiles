@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!-- To change this license header, choose License Headers in Project Properties. 
+	To change this template file, choose Tools | Templates and open the template 
+	in the editor. -->
+
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<xs:element name="story">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="narrative" type="xs:string" minOccurs="1"
+					maxOccurs="1" />
+				<xs:element name="testcase" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="scenario" minOccurs="1" type="xs:string"
+								maxOccurs="1" />
+							<xs:element name="meta-data" minOccurs="1" type="metatype"
+								maxOccurs="unbounded" />
+							<xs:element name="steps" type="steps" maxOccurs="1"
+								minOccurs="1" />
+							<xs:element name="examples" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="metatype">
+		<xs:attribute name="testcase-id" type="xs:integer" use="required" />
+		<xs:attribute name="module-id" type="xs:string" use="required" />
+		<xs:attribute name="description" type="xs:string" use="required" />
+	</xs:complexType>
+
+
+	<xs:complexType name="steps">
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="Given">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="Parameters">
+							<xs:complexType>
+								<xs:choice minOccurs="1" maxOccurs="unbounded">
+									<xs:element name="parameter">
+										<xs:complexType>
+											<xs:attribute name="name" use="required" />
+										</xs:complexType>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+					<xs:attribute name="action" type="actions" use="required"></xs:attribute>
+					<xs:attribute name="control" type="controls" use="required"></xs:attribute>
+					<xs:attribute name="control-name" type="xs:string"
+						use="required"></xs:attribute>
+					<xs:attribute name="parameter" type="xs:string" use="optional" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="When">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="Parameters">
+							<xs:complexType>
+								<xs:choice minOccurs="1" maxOccurs="unbounded">
+									<xs:element name="parameter">
+										<xs:complexType>
+											<xs:attribute name="name" use="required" />
+										</xs:complexType>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+					<xs:attribute name="action" type="actions" use="required"></xs:attribute>
+					<xs:attribute name="control" type="controls" use="required"></xs:attribute>
+					<xs:attribute name="control-name" type="xs:string"
+						use="required"></xs:attribute>
+					<xs:attribute name="parameter" type="xs:string" use="optional" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Then">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="Parameters">
+							<xs:complexType>
+								<xs:choice minOccurs="1" maxOccurs="unbounded">
+									<xs:element name="parameter">
+										<xs:complexType>
+											<xs:attribute name="name" use="required" />
+										</xs:complexType>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+					<xs:attribute name="action" type="actions" use="required"></xs:attribute>
+					<xs:attribute name="control" type="controls" use="required"></xs:attribute>
+					<xs:attribute name="control-name" type="xs:string"
+						use="required"></xs:attribute>
+					<xs:attribute name="parameter" type="xs:string" use="optional" />
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:simpleType name="actions">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="clicks"></xs:enumeration>
+			<xs:enumeration value="verifies"></xs:enumeration>
+			<xs:enumeration value="enters"></xs:enumeration>
+			<xs:enumeration value="swipes"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="controls">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="button"></xs:enumeration>
+			<xs:enumeration value="screen"></xs:enumeration>
+			<xs:enumeration value="icon"></xs:enumeration>
+			<xs:enumeration value="textfield"></xs:enumeration>
+			<xs:enumeration value="page"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>
