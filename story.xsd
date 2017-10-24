@@ -38,15 +38,16 @@
 
 	<xs:complexType name="steps">
 		<xs:choice minOccurs="1" maxOccurs="unbounded">
-			<xs:element name="Given">
+			<xs:element name="step">
 				<xs:complexType>
-					<xs:choice>
+					<xs:choice minOccurs="0" maxOccurs="1">
 						<xs:element name="Parameters">
 							<xs:complexType>
 								<xs:choice minOccurs="1" maxOccurs="unbounded">
 									<xs:element name="parameter">
 										<xs:complexType>
 											<xs:attribute name="name" use="required" />
+											<xs:attribute name="value" use="optional" />
 										</xs:complexType>
 									</xs:element>
 								</xs:choice>
@@ -58,9 +59,10 @@
 					<xs:attribute name="control-name" type="xs:string"
 						use="required"></xs:attribute>
 					<xs:attribute name="parameter" type="xs:string" use="optional" />
+					<xs:attribute name="type" type="steptype" use="required" />
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="When">
+			<!-- <xs:element name="When">
 				<xs:complexType>
 					<xs:choice>
 						<xs:element name="Parameters">
@@ -103,7 +105,7 @@
 						use="required"></xs:attribute>
 					<xs:attribute name="parameter" type="xs:string" use="optional" />
 				</xs:complexType>
-			</xs:element>
+			</xs:element> -->
 		</xs:choice>
 	</xs:complexType>
 
@@ -113,6 +115,8 @@
 			<xs:enumeration value="verifies"></xs:enumeration>
 			<xs:enumeration value="enters"></xs:enumeration>
 			<xs:enumeration value="swipes"></xs:enumeration>
+			<xs:enumeration value="selects"></xs:enumeration>
+			<xs:enumeration value="validates"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -123,7 +127,16 @@
 			<xs:enumeration value="icon"></xs:enumeration>
 			<xs:enumeration value="textfield"></xs:enumeration>
 			<xs:enumeration value="page"></xs:enumeration>
+			<xs:enumeration value="message"></xs:enumeration>
+			<xs:enumeration value="dropdown"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	
+	<xs:simpleType name="steptype">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Given"></xs:enumeration>
+			<xs:enumeration value="When"></xs:enumeration>
+			<xs:enumeration value="Then"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
