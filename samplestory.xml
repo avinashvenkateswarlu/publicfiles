@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<story name="Addfunds" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="story.xsd">
+	<narrative>
+In order to verify Addfunds game
+As a Users
+I want to verify Addfunds game
+	</narrative>
+	<testcase>
+		<scenario>
+			The intent of the test case is to verify whether  Missing_Information,Inadequate_Funds wager is displaying as per wireframe or not.
+		</scenario>
+		<meta-data testcase-id="19184" module-id="Missing _Information"
+			description="MOB-015-EF-01 Missing Information for Transfer" />
+		<meta-data testcase-id="19185" module-id="Inadequate_Funds"
+			description="MOB-015-EF-02 Inadequate Funds for Transf" />
+		
+		<steps>
+			<step type="Given" control-name="login" action="clicks"
+				control="button" />
+				
+			<step type="When" control-name="&lt;parameters_emalid&gt;"
+				action="enters" control="textfield">
+			</step>
+			<step type="When" control-name="submit" action="clicks"
+				control="button">
+			</step>
+
+			<step type="Then" control-name="" action="validates" control="textfield">
+				<Parameters>
+					<parameter name="parameters1_emailid" />
+					<parameter name="parameters2_valiedFormate" />
+					<parameter name="parameters3_Erroralert" />
+					<parameter name="length" value=">10" />
+				</Parameters>
+			</step>
+			
+			<step type="When" control-name="" action="swipes" control="icon">
+				<Parameters>
+				<parameter name="parameters1_direction"/>
+				<parameter name="parameters2_offset"/>
+				</Parameters>
+			</step>
+			
+			<step type="When" control-name="login" action="verifies" control="page" />
+			
+			<step type="When" control-name="dropdown" action="clicks" control="button"></step>
+			
+			<step type="When" control-name="" action="selects" control="dropdown">
+				<Parameters>
+				<parameter name="parameters1_Androidid"/>
+				<parameter name="parameters2_Text"/>
+				<parameter name="parameters3_IOSid"/>
+				<parameter name="parameters4_IOSDragid"/>
+				<parameter name="parameters5_IOStextid"/>
+				<parameter name="parameters6_Andriod"/>
+				<parameter name="parameters7_AndriodTapid"/>
+				</Parameters>
+			</step>
+		</steps>
+		
+		<examples>
+|parameters1_emalid|parameters2_valiedFormate|parameters3_Erroralert|
+|prabha@igt.com|afdsgsdfga|text=Please enter a valid Email address.|
+|prabha@igt.com|sdhg@|
+|prabha@igt.com|12334|
+|prabha@igt.com||
+|prabha@igt.com|prabha@igt.com|
+		</examples>
+	</testcase>
+</story>
