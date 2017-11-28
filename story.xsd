@@ -117,6 +117,7 @@
 			<xs:enumeration value="swipes"></xs:enumeration>
 			<xs:enumeration value="selects"></xs:enumeration>
 			<xs:enumeration value="validates"></xs:enumeration>
+			<xs:enumeration value="swipeswithclick"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
