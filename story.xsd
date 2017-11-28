@@ -133,7 +133,7 @@
 			<xs:enumeration value="message"></xs:enumeration>
 			<xs:enumeration value="dropdown"></xs:enumeration>
 			<xs:enumeration value="browser"></xs:enumeration>
-			<xs:enumeration value="webr"></xs:enumeration>
+			<xs:enumeration value="web"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	
