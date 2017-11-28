@@ -118,6 +118,8 @@
 			<xs:enumeration value="selects"></xs:enumeration>
 			<xs:enumeration value="validates"></xs:enumeration>
 			<xs:enumeration value="swipeswithclick"></xs:enumeration>
+			<xs:enumeration value="closes"></xs:enumeration>
+			<xs:enumeration value="waits"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -130,6 +132,8 @@
 			<xs:enumeration value="page"></xs:enumeration>
 			<xs:enumeration value="message"></xs:enumeration>
 			<xs:enumeration value="dropdown"></xs:enumeration>
+			<xs:enumeration value="browser"></xs:enumeration>
+			<xs:enumeration value="webr"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	
