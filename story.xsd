@@ -120,6 +120,17 @@
 			<xs:enumeration value="swipeswithclick"></xs:enumeration>
 			<xs:enumeration value="closes"></xs:enumeration>
 			<xs:enumeration value="waits"></xs:enumeration>
+                        <xs:enumeration value="clickcoordinates"></xs:enumeration>
+                        <xs:enumeration value="gettext"></xs:enumeration>
+                        <xs:enumeration value="nativepopuppassword"></xs:enumeration>
+                        <xs:enumeration value="nativepopupusername"></xs:enumeration>
+                        <xs:enumeration value="switchtochildframe"></xs:enumeration>
+                        <xs:enumeration value="switchtochildpopup"></xs:enumeration>
+                        <xs:enumeration value="rightclick"></xs:enumeration>
+                        <xs:enumeration value="switchtoparentframe"></xs:enumeration>
+                        <xs:enumeration value="switchtoparentpopup"></xs:enumeration>
+                        <xs:enumeration value="switchtotab"></xs:enumeration>
+                        <xs:enumeration value="switchtotab"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
