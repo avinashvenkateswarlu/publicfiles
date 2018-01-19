@@ -146,6 +146,7 @@
 			<xs:enumeration value="dropdown"></xs:enumeration>
 			<xs:enumeration value="browser"></xs:enumeration>
 			<xs:enumeration value="web"></xs:enumeration>
+			<xs:enumeration value="lable"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	
