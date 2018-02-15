@@ -147,6 +147,7 @@
 			<xs:enumeration value="browser"></xs:enumeration>
 			<xs:enumeration value="web"></xs:enumeration>
 			<xs:enumeration value="lable"></xs:enumeration>
+			<xs:enumeration value="element"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	
