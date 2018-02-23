@@ -132,6 +132,8 @@
                         <xs:enumeration value="switchtotab"></xs:enumeration>
                         <xs:enumeration value="switchtotab"></xs:enumeration>
 			<xs:enumeration value="navigate"></xs:enumeration>
+			<xs:enumeration value="tap"></xs:enumeration>
+			<xs:enumeration value="choose"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
