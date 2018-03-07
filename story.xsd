@@ -151,6 +151,7 @@
 			<xs:enumeration value="lable"></xs:enumeration>
 			<xs:enumeration value="element"></xs:enumeration>
 			<xs:enumeration value="link"></xs:enumeration>
+			<xs:enumeration value="pop_up"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	
