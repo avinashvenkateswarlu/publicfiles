@@ -152,6 +152,8 @@
 			<xs:enumeration value="element"></xs:enumeration>
 			<xs:enumeration value="link"></xs:enumeration>
 			<xs:enumeration value="pop_up"></xs:enumeration>
+			<xs:enumeration value="checkbox"></xs:enumeration>
+			<xs:enumeration value="textarea"></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	
